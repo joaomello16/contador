@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+ <title>Contador</title>
+ <style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        min-height: 100vh;
+        background-color: #FFFFE0;
+        color: white;
+        display: grid;
+        place-items: center;
+    }
+    section{
+       background-color: #2F4F4F;
+       padding: 20px;
+       border-radius: 5px;
+       text-align: center;
+    }
+    
+    p {
+        font-size: 100px;
+    }
+ </style>
+</head>
+
+<body>
+    
+    <section>
+        <h1>Contador</h1>
+        <p id="resultado">0</p>
+        <button onclick="diminuir()" >menos</button>
+        <button onclick="aumentar()">mais</button>
+    </section>
+
+   <script>
+    let numero = 0
+    
+    function aumentar(){
+      numero = numero + 1
+      mostrarnatela()
+      
+    }
+
+    function diminuir(){
+        numero = numero - 1
+       mostrarnatela()
+    }
+
+    function mostrarnatela(){
+        const p = document.querySelector("#resultado")
+        p.innerText = numero
+    }
+   </script>
+
+</body>
