@@ -1,59 +1,75 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
- <title>Contador</title>
- <style>
-    *{
-        margin: 0;
-        box-sizing: border-box;
-    }
-    body{
-        min-height: 100vh;
-        background-color: #FFFFE0;
-        color: white;
-        display: grid;
-        place-items: center;
-    }
-    section{
-       background-color: #2F4F4F;
-       padding: 20px;
-       border-radius: 5px;
-       text-align: center;
-    }
-    
-    p {
-        font-size: 100px;
-    }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        body{
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+
+        div{
+            text-align: center;
+            background-color: aquamarine;
+            padding: 20px;
+        }
+        p{
+            font-size: 60px;
+        }
+    </style>
 </head>
-
 <body>
-    
-    <section>
+    <div>
         <h1>Contador</h1>
-        <p id="resultado">0</p>
-        <button onclick="diminuir()" >menos</button>
-        <button onclick="aumentar()">mais</button>
-    </section>
+        <p></p>
+        <button onclick="menos()" >menos</button>
+        <button onclick="mais()" >mais</button>
+    </div>
 
-   <script>
-    let numero = 0
-    
-    function aumentar(){
-      numero = numero + 1
-      mostrarnatela()
-      
-    }
+    <script>
+        let numero = 0
+        tela()
 
-    function diminuir(){
-        numero = numero - 1
-       mostrarnatela()
-    }
+        
+        
+        function mais(){
+            numero++
+            tela()
+            cor()
+            
+        }
 
-    function mostrarnatela(){
-        const p = document.querySelector("#resultado")
-        p.innerText = numero
-    }
-   </script>
+        function menos(){
+            numero--
+            tela()
+            cor()
+            
+        }
 
+        function tela(){
+            const a = document.querySelector('p')
+            a.innerText = numero
+        }
+        
+        
+        function cor(){
+            if(numero < 0){
+                const a = document.querySelector('p')
+                a.style.color = 'red'
+            }else if(numero > 0){
+                const a = document.querySelector('p')
+                a.style.color = 'green'
+            }else{
+                const a = document.querySelector('p')
+                a.style.color = 'black'
+            }
+        }
+
+        
+
+    </script>
 </body>
+</html>
